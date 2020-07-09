@@ -18,8 +18,16 @@ jobs:
     - run: cd calculadora_imc && flutter pub get
     - run: cd calculadora_imc && flutter build apk --release
 
+    - run: cd contador_de_pessoas && flutter pub get
+    - run: cd contador_de_pessoas && flutter build apk --release
+    
+    - run: cd conversor_moeda && flutter pub get
+    - run: cd conversor_moeda && flutter build apk --release
+
     - run: mkdir apks
     - run: cp calculadora_imc/build/app/outputs/apk/release/app-release.apk apks/calculadora_imc.apk
+    - run: cp contador_de_pessoas/build/app/outputs/apk/release/app-release.apk apks/contador_de_pessoas.apk
+    - run: cp conversor_moeda/build/app/outputs/apk/release/app-release.apk apks/conversor_moeda.apk
 
     - name: Create a Release APK
       uses: ncipollo/release-action@v1
