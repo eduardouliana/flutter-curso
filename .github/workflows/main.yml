@@ -14,7 +14,7 @@ jobs:
         java-version: '12.x'
     - uses: subosito/flutter-action@v1
       with:
-        flutter-version: '1.7.8+hotfix.4'
+        channel: 'stable'
     - run: cd calculadora_imc && flutter pub get
     - run: cd calculadora_imc && flutter build apk --release
     - name: Create a Release APK
@@ -32,7 +32,7 @@ jobs:
         java-version: '12.x'
     - uses: subosito/flutter-action@v1
       with:
-        flutter-version: '1.7.8+hotfix.4'
+        channel: 'stable'
     - run: cd contador_de_pessoas && flutter pub get
     - run: cd contador_de_pessoas && flutter build apk --release
     - name: Create a Release APK
@@ -50,7 +50,7 @@ jobs:
         java-version: '12.x'
     - uses: subosito/flutter-action@v1
       with:
-        flutter-version: '1.7.8+hotfix.4'
+        channel: 'stable'
     - run: cd conversor_moeda && flutter pub get
     - run: cd conversor_moeda && flutter build apk --release
     - name: Create a Release APK
