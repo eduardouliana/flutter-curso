@@ -8,7 +8,6 @@ jobs:
     name: Build APK
     runs-on: ubuntu-latest
     steps:
-      working-directory: ./calculadora_imc
     - uses: actions/checkout@v1
     - uses: actions/setup-java@v1
       with:
@@ -16,6 +15,7 @@ jobs:
     - uses: subosito/flutter-action@v1
       with:
         flutter-version: '1.7.8+hotfix.4'
+    - run: cd calculadora_imc
     - run: flutter pub get
     - run: flutter build apk --release
     - name: Create a Release APK
@@ -27,7 +27,6 @@ jobs:
     name: Build APK
     runs-on: ubuntu-latest
     steps:
-      working-directory: ./contador_de_pessoas
     - uses: actions/checkout@v1
     - uses: actions/setup-java@v1
       with:
@@ -35,6 +34,7 @@ jobs:
     - uses: subosito/flutter-action@v1
       with:
         flutter-version: '1.7.8+hotfix.4'
+    - run: cd contador_de_pessoas
     - run: flutter pub get
     - run: flutter build apk --release
     - name: Create a Release APK
@@ -46,7 +46,6 @@ jobs:
     name: Build APK
     runs-on: ubuntu-latest
     steps:
-      working-directory: ./conversor_moeda
     - uses: actions/checkout@v1
     - uses: actions/setup-java@v1
       with:
@@ -54,6 +53,7 @@ jobs:
     - uses: subosito/flutter-action@v1
       with:
         flutter-version: '1.7.8+hotfix.4'
+    - run: cd conversor_moeda
     - run: flutter pub get
     - run: flutter build apk --release
     - name: Create a Release APK
