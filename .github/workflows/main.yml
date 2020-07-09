@@ -5,7 +5,7 @@ on:
 name: Build and Release apk
 jobs:
   calculadora_imc:
-    name: Build APK
+    name: Build APK calculadora_imc
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -15,16 +15,15 @@ jobs:
     - uses: subosito/flutter-action@v1
       with:
         flutter-version: '1.7.8+hotfix.4'
-    - run: cd calculadora_imc
-    - run: flutter pub get
-    - run: flutter build apk --release
+    - run: cd calculadora_imc && flutter pub get
+    - run: cd calculadora_imc && flutter build apk --release
     - name: Create a Release APK
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "build/app/outputs/apk/release/*.apk"
+        artifacts: "calculadora_imc/build/app/outputs/apk/release/*.apk"
         token: ${{ secrets.TOKEN }}
   contador_de_pessoas:
-    name: Build APK
+    name: Build APK contador_de_pessoas
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -34,16 +33,15 @@ jobs:
     - uses: subosito/flutter-action@v1
       with:
         flutter-version: '1.7.8+hotfix.4'
-    - run: cd contador_de_pessoas
-    - run: flutter pub get
-    - run: flutter build apk --release
+    - run: cd contador_de_pessoas && flutter pub get
+    - run: cd contador_de_pessoas && flutter build apk --release
     - name: Create a Release APK
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "build/app/outputs/apk/release/*.apk"
+        artifacts: "contador_de_pessoas/build/app/outputs/apk/release/*.apk"
         token: ${{ secrets.TOKEN }}
   conversor_moeda:
-    name: Build APK
+    name: Build APK conversor_moeda
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -53,11 +51,10 @@ jobs:
     - uses: subosito/flutter-action@v1
       with:
         flutter-version: '1.7.8+hotfix.4'
-    - run: cd conversor_moeda
-    - run: flutter pub get
-    - run: flutter build apk --release
+    - run: cd conversor_moeda && flutter pub get
+    - run: cd conversor_moeda && flutter build apk --release
     - name: Create a Release APK
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "build/app/outputs/apk/release/*.apk"
+        artifacts: "conversor_moeda/build/app/outputs/apk/release/*.apk"
         token: ${{ secrets.TOKEN }}
