@@ -4,7 +4,7 @@ on:
       - v*
 name: Build and Release apk
 jobs:
-  build:
+  calculadora_imc:
     name: Build APK
     runs-on: ubuntu-latest
     steps:
@@ -23,7 +23,7 @@ jobs:
       with:
         artifacts: "build/app/outputs/apk/release/*.apk"
         token: ${{ secrets.TOKEN }}
-  build:
+  contador_de_pessoas:
     name: Build APK
     runs-on: ubuntu-latest
     steps:
@@ -42,7 +42,7 @@ jobs:
       with:
         artifacts: "build/app/outputs/apk/release/*.apk"
         token: ${{ secrets.TOKEN }}
-  build:
+  conversor_moeda:
     name: Build APK
     runs-on: ubuntu-latest
     steps:
